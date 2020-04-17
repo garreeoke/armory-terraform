@@ -6,7 +6,7 @@ provider "google" {
 
 resource "google_compute_instance_from_template" "blazer-template" {
   name         = "instance-from-template"
-  source_instance_template = "blazer-template"
+  source_instance_template = "blazer-instance-template-1"
 
   network_interface {
     network = "default"
