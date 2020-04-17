@@ -1,3 +1,9 @@
+provider "google" {
+  project = "aaront-armory1"
+  region  = "us-west1"
+  zone    = "us-west1-b"
+}
+
 resource "google_compute_instance_template" "tpl" {
   name         = "blazer1"
   machine_type = "n1-standard-1"
