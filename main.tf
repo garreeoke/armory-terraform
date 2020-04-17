@@ -4,7 +4,7 @@ provider "google" {
   zone    = "us-west1-b"
 }
 
-resource "google_compute_instance_template" "tpl" {
+resource "google_compute_instance_template" "blazer-template" {
   name         = "blazer1"
   machine_type = "n1-standard-1"
 
