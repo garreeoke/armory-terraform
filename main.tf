@@ -10,7 +10,7 @@ variable "environment_name" {
 }
 
 resource "google_compute_instance" "blaze-instance" {
-  name         = acmetester
+  name         = "acmetester"
   machine_type = "n1-standard-1"
 
   boot_disk {
