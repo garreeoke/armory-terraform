@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("/Users/aarontorgerson/clouds/gke/spinnaker-gcs.json")
+  credentials = "("/home/spinnaker/.google/spinnaker-gcs.json")"
   project = "aaront-armory1"
   region  = "us-west1"
   zone    = "us-west1-b"
