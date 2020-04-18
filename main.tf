@@ -1,5 +1,8 @@
 terraform {
-  backend "local" {}
+  backend "gcs" {
+    bucket  = "aaront-armory-tf-state"
+    prefix  = "terraform/state"
+  }
 }
 
 provider "google" {
@@ -7,6 +10,7 @@ provider "google" {
   project = "aaront-armory1"
   region  = "us-west1"
   zone    = "us-west1-b"
+  version = "~> 2.5.0"
 }
 
 variable "environment_name" {
