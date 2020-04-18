@@ -1,7 +1,5 @@
 terraform {
-  backend "local" {
-    path = "tf-state/terraform.tfstate"
-  }
+  backend "local" {}
 }
 
 provider "google" {
