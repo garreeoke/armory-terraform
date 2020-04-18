@@ -1,3 +1,10 @@
+terraform {
+  backend "gcs" {
+    bucket  = "tf-state-prod"
+    prefix  = "terraform/state"
+  }
+}
+
 provider "google" {
   credentials = file("/home/spinnaker/.google/gcp.json")
   project = "aaront-armory1"
@@ -5,8 +12,12 @@ provider "google" {
   zone    = "us-west1-b"
 }
 
+variable "environment_name" {
+  default="acme-tester"
+}
+
 resource "google_compute_instance" "blaze-instance" {
-  name         = "instance-from-image"
+  name         = "${var.environment_name}"
   machine_type = "n1-standard-1"
 
   boot_disk {
