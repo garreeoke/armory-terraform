@@ -1,3 +1,9 @@
+terraform {
+  backend "local" {
+    path = "tf-state/terraform.tfstate"
+  }
+}
+
 provider "google" {
   credentials = file("/home/spinnaker/.google/gcp.json")
   project = "aaront-armory1"
