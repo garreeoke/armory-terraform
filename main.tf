@@ -2,6 +2,7 @@ terraform {
   backend "gcs" {
     bucket  = "aaront-armory-tf-state"
     prefix  = "terraform/state"
+    credentials = "/home/spinnaker/.google/gcp.json"
   }
 }
 
