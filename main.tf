@@ -17,22 +17,9 @@ variable "environment_name" {
   default="acme-tester"
 }
 
-resource "google_compute_instance" "blaze-instance" {
+resource "google_compute_instance_from_template" "blaze-instance" {
   name         = "acmetester"
-  machine_type = "n1-standard-1"
-
-  boot_disk {
-    initialize_params {
-      image = "blaze-image1"
-    }
-  }
-  network_interface {
-    network = "default"
-  }
-
-  metadata = {
-    app = "blazer"
-  }
-
-  can_ip_forward = true
+  zone = "us-west1-b"
+  source_instance_template = "bzt-instance-template"
+  can_ip_forward = false
 }
