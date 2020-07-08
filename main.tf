@@ -20,6 +20,6 @@ variable "environment_name" {
 resource "google_compute_instance_from_template" "blaze-instance" {
   name         = "acmetester"
   zone = "us-west1-b"
-  source_instance_template = "bzt-instance-template2"
+  source_instance_template = "blaze-instance"
   can_ip_forward = false
 }
