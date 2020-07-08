@@ -8,7 +8,7 @@ terraform {
 
 provider "google" {
   credentials = file("/home/spinnaker/.google/gcp.json")
-  project = "aaront-armory1"
+  project = "aaront1"
   region  = "us-west1"
   zone    = "us-west1-b"
 }
