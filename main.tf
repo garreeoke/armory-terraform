@@ -9,8 +9,8 @@ terraform {
 provider "google" {
   credentials = file("/home/spinnaker/.google/gcp.json")
   project = "aaront1"
-  region  = "us-west1"
-  zone    = "us-west1-b"
+  region  = "us-central1"
+  zone    = "us-central1-a"
 }
 
 variable "environment_name" {
@@ -19,7 +19,7 @@ variable "environment_name" {
 
 resource "google_compute_instance_from_template" "blaze-instance" {
   name         = "acmetester"
-  zone = "us-west1-b"
+  zone = "us-central1-a"
   source_instance_template = "blaze-instance"
   can_ip_forward = false
 }
