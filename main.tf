@@ -13,8 +13,8 @@ provider "google" {
   zone    = "us-central1-a"
 }
 
-variable "environment_name" {
-  default="acme-tester"
+variable "task_id" {
+  default="None"
 }
 
 resource "google_compute_instance_from_template" "blaze-instance" {
